@@ -10,6 +10,8 @@ class Car:
         print('скорость увеличилась на 5 и равна', self.__speed)
 
     def down(self):
+        if self.__speed - 5 < 0:
+            raise ValueError('Скорость не может быть меньше нуля')
         self.__speed = self.__speed - 5
         print('скорость уменьшилась на 5 и стала равна', self.__speed)
 
@@ -34,3 +36,4 @@ car.down()
 car.show()
 car.reverse()
 car.stop()
+car.down()
